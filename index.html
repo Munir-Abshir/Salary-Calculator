@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"> -->
+  <link href="styles/style.css" rel="stylesheet">
   <title>Salary Calculator</title>
 </head>
 <body>
@@ -10,11 +12,61 @@
     <h1>Salary Calculator</h1>
   </header>
   <main>
-    <h2>Add Employee</h2>
-    <h2>Employees</h2>
+  
+
+
+   <h2>Add Employee</h2>
+   <div>
+    <input type="text" data-testid="firstNameInput" placeholder="First Name">
+    <input type="text" data-testid="lastNameInput" placeholder="Last Name">
+    <input type="number" data-testid="idInput" placeholder="ID">
+    <input type="text" data-testid="titleInput" placeholder="Title">
+    <input type="number" data-testid="annualSalaryInput" placeholder="Annual Salary">
+    <input type="submit" data-testid="submitButton">  
+    
+    </div>
+   <h2>Employees</h2>
+
+   <div> 
+<table>
+<thead>
+  <tr>
+<th> First Name </th>
+<th>Last Name </th>
+<th> ID</th>
+<th> Title</th>
+<th> Annual Salary</th>
+</tr>
+</thead>
+
+<tbody id="displayTable">
+  <tr>
+<td> Jen </td>
+<td> Barbra </td>
+<td> 4521</td>
+<td>Team Lead </td>
+<td> 80000</td>
+<td><button class="delete-button"> delete </button></td>
+</tr>
+
+</tbody>
+
+
+
+
+</table>
+
+
+
+
+   </div>
   </main>
-  <footer>
-    <p>Total Monthly</p>
+  <footer id="foot-note">
+   
+
+    <div id="over-budget"> </div>
   </footer>
 </body>
 </html>
+
+<script src="/client.js"></script>
