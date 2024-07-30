@@ -17,12 +17,12 @@
 
    <h2>Add Employee</h2>
    <div>
-    <input type="text" data-testid="firstNameInput" placeholder="First Name">
-    <input type="text" data-testid="lastNameInput" placeholder="Last Name">
-    <input type="number" data-testid="idInput" placeholder="ID">
-    <input type="text" data-testid="titleInput" placeholder="Title">
-    <input type="number" data-testid="annualSalaryInput" placeholder="Annual Salary">
-    <input type="submit" data-testid="submitButton">  
+    <input type="text" data-testid="firstNameInput" id="firstNameInput"  placeholder="First Name">
+    <input type="text" data-testid="lastNameInput" id="lastNameInput" placeholder="Last Name">
+    <input type="number" data-testid="idInput" id="idInput" placeholder="ID">
+    <input type="text" data-testid="titleInput" id="titleInput" placeholder="Title">
+    <input type="number" data-testid="annualSalaryInput" id="annualSalaryInput" placeholder="Annual Salary">
+    <input type="submit" data-testid="submitButton" id="submitButton">  
     
     </div>
    <h2>Employees</h2>
@@ -46,7 +46,7 @@
 <td> 4521</td>
 <td>Team Lead </td>
 <td> 80000</td>
-<td><button class="delete-button"> delete </button></td>
+<td><button class="delete-button" onclick="deleted(event)"> delete </button></td>
 </tr>
 
 </tbody>

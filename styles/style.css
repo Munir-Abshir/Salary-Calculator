@@ -1,4 +1,7 @@
 header{
+    padding-bottom: 10px;
+    padding-top: 4px;
+
     background-color: gray;
 }
 
@@ -48,7 +51,7 @@ font-size: larger;
 background-color: red;
 }
 
-/* body {
-width: 80%;
+body {
+width: 90%;
 margin: 20px auto;
-} */
+}

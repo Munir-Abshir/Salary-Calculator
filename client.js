@@ -1,7 +1,7 @@
 
 console.log("what?")
 
-function btnClick (event) {
+function handelSubmit (event) {
 
     let firstname = document.querySelector('#firstNameInput').value;
     let lastName = document.querySelector('#lastNameInput').value;
@@ -30,18 +30,18 @@ tableRow.innerHTML +=
 <td> ${id} </td>
 <td>${title} </td>
 <td> ${annual}</td>
-<td><button class="delete-button"> delete </button></td>
+<td><button class="delete-button" onclick="deleted(event)"> delete </button></td>
 
 `;
 
 displayTable.append(tableRow);
 
 
-document.querySelector('#first-name').value = '';
- document.querySelector('#last-name').value = '';
-  document.querySelector('#id').value = '';
-document.querySelector('#title').value = '';
-document.querySelector('#annual').value = '';
+document.querySelector('#firstNameInput').value = '';
+ document.querySelector('#lastNameInput').value = '';
+  document.querySelector('#idInput').value = '';
+document.querySelector('#titleInput').value = '';
+document.querySelector('#annualSalaryInput').value = '';
 
 
 monthlyMoney();
@@ -52,9 +52,13 @@ monthlyMoney();
 
 
 
-const submitButto = document.querySelector('#submitButton');
+const submitButton = document.querySelector('#submitButton');
+console.log(submitButton);
+submitButton.addEventListener("click", handelSubmit);
 
-submitButto.addEventListener("click", btnClick)
+
+
+
 
 
 
@@ -101,14 +105,13 @@ function monthlyMoney() {
         
         `;
         
-
         note.append(footerNote);
 
 
         if (totalMonthly > 20000) {
-          footerNote.classList.add('over-budget')
+          footerNote.classList.add("over-budget")
       } else {
-          footerNote.classList.remove('over-budget')
+          footerNote.classList.remove("over-budget")
       }
     
     }
@@ -118,22 +121,39 @@ monthlyMoney();
 
 
 
-
-
-
-
-let m = document.querySelectorAll('.delete-button')
-
-m.forEach(btn => btn.addEventListener('click', function deleted(event) {
-  let deletedRow = btn.parentElement.parentElement;
+function deleted(event) {
+  console.log("worked");
+  let deletedRow = event.target.parentElement.parentElement;
+  //leanred about event target.
+  console.log(deletedRow);
   deletedRow.remove();
-  // alert("worked");
-  // console.log('lol');
-  } ))
+  let test = event.target.closest('tr');
+  let test2 = test.children[4].textContent;
+  console.log(test2);
+  console.log(test2 - 3);
+  }
+
+
+let deletebutton = document.querySelectorAll('.delete-button')
+
+
+
+// deletebutton.addEventListener('click', deleted);
+
+
+
+
+
+
+// m.forEach(btn => btn.addEventListener('click', function deleted(event) {
+//   let deletedRow = btn.parentElement.parentElement;
+//   deletedRow.remove();
+//   // alert("worked");
+//   // console.log('lol');
+//   } ))
 
   
 
 
 
 
-// deletebutton.addEventListener('click', deleted);
